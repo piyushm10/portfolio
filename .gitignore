@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+
+# Next.js build output
+.next/
+out/
+
+# Local environment
+.env
+.env.local
+.env.*.local
+
+# Logs and OS files
+*.log
+.DS_Store
+Thumbs.db
+
+# Source reference files that are not published with the site
+*.onepkg
+PIYUSH MORE - PROFESSIONAL MASTER PROFILE.docx

@@ -1,0 +1,304 @@
+Build a premium, modern, highly polished personal portfolio website based on the attached professional profile document.
+
+Primary goal:
+Create a portfolio that looks like a top-tier software engineer / AI engineer portfolio, suitable for recruiters, hiring managers, founders, and R&D teams.
+
+Technology:
+
+* Next.js
+* TypeScript
+* Tailwind CSS
+* Framer Motion
+* Fully responsive
+* Dark theme by default
+* Optimized for GitHub Pages deployment
+* SEO friendly
+
+Design direction:
+
+* Minimal but premium
+* Apple + Linear + Stripe inspired
+* Smooth animations
+* Glassmorphism effects
+* Modern gradients
+* Clean typography
+* Interactive project cards
+* Professional, not flashy
+* High-end product website feel
+
+Color palette:
+
+* Dark background
+* Subtle blue/purple gradients
+* White typography
+* Professional accent colors
+
+Navigation Tabs:
+
+1. Home
+2. About
+3. Experience
+4. Projects
+5. Research
+6. Publications & IP
+7. Skills
+8. Certifications
+9. Timeline
+10. Resume
+
+Website Structure
+
+HOME PAGE
+
+Hero Section:
+
+* Full-screen hero
+* Name prominently displayed
+* Software Engineer | Automation & Applied AI
+* Personal brand statement from profile
+* Animated background
+* CTA buttons:
+
+  * View Projects
+  * Download Resume
+  * LinkedIn
+  * GitHub
+  * Email
+
+For now generate a premium placeholder portrait illustration:
+
+* Professional software engineer
+* Modern vector style
+* Dark theme compatible
+* Replaceable later with actual image
+
+ABOUT PAGE
+
+Create a compelling professional narrative from the profile.
+
+Include:
+
+* Education
+* Current internship
+* Career focus
+* Technical interests
+* Professional positioning
+
+Add:
+"What I Work On"
+cards:
+
+* Software Engineering
+* Automation Systems
+* Applied AI
+* Healthcare Technology
+* Product Development
+* Research & Experimentation
+
+EXPERIENCE PAGE
+
+Create an interactive timeline.
+
+Highlight:
+
+Bio-Rad Medisys
+System Design and Development Intern
+
+Detailed sections:
+
+1. UI Automation Framework
+2. Workflow Automation Research
+3. CGM Analytics Research
+4. Kidney Stone Detection Optimization
+
+For each:
+
+* Overview
+* Problem
+* Approach
+* Technologies
+* Outcomes
+
+Include architecture-style diagrams generated as SVG placeholders.
+
+PROJECTS PAGE
+
+Create visually rich project cards.
+
+Project 1:
+Healthcare UI Automation Framework
+
+Project 2:
+CGM Analytics & Glucose Spike Detection
+
+Project 3:
+Kidney Stone Detection Optimization Study
+
+Project 4:
+Microgreens Monitoring and Growth Detection System
+
+Each project page should contain:
+
+* Overview
+* Challenges
+* Solution
+* Technologies
+* Impact
+* Key Learnings
+* Interactive visual mockup
+
+Generate placeholder illustrations where actual screenshots are unavailable.
+
+RESEARCH PAGE
+
+Create a dedicated research section.
+
+Topics:
+
+* Healthcare AI
+* CGM Analytics
+* Machine Learning
+* Medical Imaging Optimization
+* Workflow Automation
+
+Show:
+
+* Research process
+* Methodologies
+* Findings
+* Future directions
+
+Include modern research visualizations using placeholder data.
+
+PUBLICATIONS & INTELLECTUAL PROPERTY PAGE
+
+Showcase:
+
+IEEE ICCDS 2025 Publication
+
+Industrial Design Registration:
+Microgreens Monitoring and Growth Detection System
+
+Display them as premium achievement cards.
+
+SKILLS PAGE
+
+Create categorized skill visualization.
+
+Categories:
+
+* Programming
+* Software Engineering
+* Automation & Testing
+* Applied AI
+* Data Analytics
+* Tools & Platforms
+
+Include:
+
+* Interactive skill graph
+* Animated proficiency indicators
+* Technology badges
+
+CERTIFICATIONS PAGE
+
+Show certification cards:
+
+* OCI AI Foundations Associate
+* OCI Data Science Professional
+* OCI Generative AI Professional
+* Google Data Analytics Professional Certificate
+
+TIMELINE PAGE
+
+Interactive journey timeline:
+
+Education
+Projects
+Publication
+Patent
+Internship
+Research
+
+Include animated milestone progression.
+
+RESUME PAGE
+
+Embed downloadable resume section.
+
+CONTACT SECTION
+
+No contact form.
+
+Only:
+
+* LinkedIn
+* GitHub
+* Email
+
+Use elegant social cards.
+
+Images
+
+Since no images are currently available:
+
+Generate professional SVG placeholder assets:
+
+* Portrait illustration
+* Research illustrations
+* Software engineering workspace
+* AI/automation themed graphics
+* Healthcare technology graphics
+* Project mockups
+
+All placeholders must be clearly replaceable later.
+
+Animations
+
+Include:
+
+* Scroll reveal effects
+* Smooth page transitions
+* Hover interactions
+* Animated counters
+* Floating background elements
+* Timeline animations
+
+Additional Features
+
+* Command palette (Ctrl + K)
+* Light/Dark toggle
+* Search functionality
+* Reading progress indicator
+* Animated statistics section
+* SEO metadata
+* Open Graph tags
+* Sitemap
+* Structured data
+
+Content Rules
+
+* Use the attached profile as the primary content source.
+* Expand content professionally where needed.
+* Do not invent fake achievements.
+* Present the user primarily as:
+  Software Engineer with experience in Automation and Applied AI.
+
+Avoid positioning as:
+
+* Embedded Engineer
+* Firmware Engineer
+* Electronics Engineer
+
+Final Deliverables
+
+1. Complete production-ready codebase.
+2. Fully responsive design.
+3. GitHub Pages deployment configuration.
+4. Placeholder SVG assets.
+5. Clean folder structure.
+6. README with deployment instructions.
+7. Professional recruiter-focused experience.
+8. Premium visual quality comparable to top software engineer portfolios.
+
+Use the attached profile document as the source of all factual information.

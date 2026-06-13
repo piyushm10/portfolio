@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 440">
+  <rect width="800" height="440" rx="28" fill="#0b0e17"/>
+  <path d="M0 80h800M0 160h800M0 240h800M0 320h800M100 0v440M200 0v440M300 0v440M400 0v440M500 0v440M600 0v440M700 0v440" stroke="#fff" stroke-opacity=".05"/>
+  <g font-family="Arial" font-size="15" text-anchor="middle">
+    <g transform="translate(90 160)"><rect width="130" height="100" rx="16" fill="#13182a" stroke="#707aff"/><text x="65" y="57" fill="#dce1f5">Test data</text></g>
+    <path d="M225 210h75" stroke="#6ee7d2" stroke-width="3" stroke-dasharray="7 7"/>
+    <g transform="translate(300 160)"><rect width="130" height="100" rx="16" fill="#13182a" stroke="#707aff"/><text x="65" y="57" fill="#dce1f5">UI driver</text></g>
+    <path d="M435 210h75" stroke="#6ee7d2" stroke-width="3" stroke-dasharray="7 7"/>
+    <g transform="translate(510 160)"><rect width="130" height="100" rx="16" fill="#13182a" stroke="#707aff"/><text x="65" y="57" fill="#dce1f5">Validation</text></g>
+    <path d="M645 210h55" stroke="#6ee7d2" stroke-width="3" stroke-dasharray="7 7"/>
+    <circle cx="728" cy="210" r="29" fill="#17352f" stroke="#6ee7d2"/>
+    <path d="M715 210l9 9 17-19" fill="none" stroke="#6ee7d2" stroke-width="5"/>
+  </g>
+</svg>
