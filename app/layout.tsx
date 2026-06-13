@@ -14,6 +14,7 @@ const manrope = Manrope({
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://piyushm10.github.io";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -33,6 +34,10 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Piyush More" }],
   creator: "Piyush More",
+  icons: {
+    icon: `${basePath}/icon.svg`,
+    shortcut: `${basePath}/favicon.ico`
+  },
   openGraph: {
     type: "website",
     title: "Piyush More | Software Engineer",
