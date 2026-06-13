@@ -29,6 +29,8 @@ The static site is generated in `out/`.
 
 The configuration automatically detects whether the repository is a user site (`username.github.io`) or a project site (`username.github.io/repository`), and sets the Next.js base path accordingly.
 
+The first remote build uses `npm install` because this environment cannot generate a lockfile locally. After GitHub Actions produces a successful build, generate and commit `package-lock.json` from any Node-enabled machine and change the workflow to `npm ci` for fully reproducible installs.
+
 ## Replace content and assets
 
 - Portfolio facts: `data/portfolio.ts`
