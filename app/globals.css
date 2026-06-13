@@ -84,6 +84,9 @@ kbd { padding: 3px 5px; border: 1px solid var(--line); border-radius: 5px; backg
 .hero-visual { position: relative; width: 100%; max-width: 490px; justify-self: end; }
 .portrait-shell { position: relative; z-index: 1; width: 100%; border-radius: 42% 42% 24px 24px; overflow: hidden; background: linear-gradient(145deg, rgba(124,131,255,.13), rgba(110,231,210,.04)); border: 1px solid var(--line); box-shadow: var(--shadow); }
 .portrait-shell svg { display: block; width: 100%; }
+.portrait-photo-shell { aspect-ratio: 1 / 1.13; border-radius: 44% 44% 24px 24px; }
+.portrait-photo-shell > img { position: relative; z-index: 1; display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 38%; filter: saturate(.86) contrast(1.04); }
+.portrait-photo-shell::after { content: ""; position: absolute; z-index: 2; inset: 0; pointer-events: none; background: linear-gradient(to top, rgba(7,8,13,.42), transparent 34%); }
 .portrait-glow { position: absolute; inset: 15% 12% 20%; border-radius: 50%; background: var(--glow); filter: blur(65px); }
 .portrait-label { position: absolute; left: 16px; bottom: 16px; display: flex; align-items: center; gap: 7px; padding: 7px 10px; border-radius: 8px; background: rgba(5,7,14,.78); color: #ccd2e8; font-size: 10px; backdrop-filter: blur(10px); }
 .floating-chip { position: absolute; z-index: 3; display: flex; gap: 9px; align-items: center; padding: 10px 13px; border: 1px solid var(--line); border-radius: 11px; background: var(--card); backdrop-filter: blur(18px); box-shadow: var(--shadow); color: var(--accent-two); }
@@ -152,7 +155,7 @@ kbd { padding: 3px 5px; border: 1px solid var(--line); border-radius: 5px; backg
 .project-toggle { display: grid; place-items: center; width: 36px; height: 36px; border: 1px solid var(--line); border-radius: 10px; transition: transform .25s; }
 .project-card-open .project-toggle { transform: rotate(180deg); }
 .project-detail { overflow: hidden; padding: 0 24px 28px 104px; }
-.architecture, .chart-visual { min-height: 230px; margin-bottom: 26px; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-tint); overflow: hidden; }
+.architecture, .chart-visual, .project-evidence { min-height: 230px; margin-bottom: 26px; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-tint); overflow: hidden; }
 .architecture { display: grid; grid-template-columns: repeat(4, 1fr); align-items: center; padding: 38px; }
 .arch-step { position: relative; display: grid; justify-items: center; gap: 9px; }
 .arch-step > span { display: grid; place-items: center; width: 50px; height: 50px; border: 1px solid color-mix(in srgb, var(--accent) 50%, var(--line)); border-radius: 14px; color: var(--accent); background: var(--card-solid); font-size: 10px; box-shadow: 0 10px 30px var(--glow); }
@@ -164,6 +167,14 @@ kbd { padding: 3px 5px; border: 1px solid var(--line); border-radius: 5px; backg
 .chart-note { position: absolute; right: 17%; top: 19%; display: grid; padding: 9px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--card-solid); }
 .chart-note b { color: var(--accent-two); font-size: 12px; }
 .chart-note span { color: var(--muted); font-size: 8px; }
+.project-evidence { position: relative; display: grid; grid-template-rows: 42px 1fr; min-height: 300px; background: #f7f8fb; }
+.evidence-bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 0 15px; border-bottom: 1px solid rgba(18,24,45,.1); color: #687087; background: #fff; font-size: 9px; text-transform: uppercase; letter-spacing: .09em; }
+.evidence-bar span { display: flex; align-items: center; gap: 7px; }
+.evidence-bar i { width: 7px; height: 7px; border-radius: 50%; background: #45cda5; }
+.evidence-bar b { color: #272d3e; font-size: 9px; }
+.project-evidence > img { display: block; width: 100%; height: 100%; max-height: 390px; padding: 18px; object-fit: contain; }
+.evidence-dark { background: #080d18; }
+.evidence-dark > img { padding: 0; object-fit: cover; }
 .project-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; }
 .project-columns p { margin: 8px 0 0; color: var(--muted); font-size: 11px; line-height: 1.7; }
 .outcomes { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin: 22px 0; }

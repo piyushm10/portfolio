@@ -123,32 +123,16 @@ function Counter({
 
 function Portrait() {
   return (
-    <div className="portrait-shell" aria-label="Replaceable professional portrait illustration">
+    <div className="portrait-shell portrait-photo-shell">
       <div className="portrait-glow" />
-      <svg viewBox="0 0 560 650" role="img" aria-label="Stylized software engineer portrait">
-        <defs>
-          <linearGradient id="jacket" x1="0" x2="1" y1="0" y2="1">
-            <stop stopColor="#283460" />
-            <stop offset="1" stopColor="#11162a" />
-          </linearGradient>
-          <linearGradient id="screen" x1="0" x2="1">
-            <stop stopColor="#67e8f9" />
-            <stop offset="1" stopColor="#8b5cf6" />
-          </linearGradient>
-        </defs>
-        <circle cx="280" cy="285" r="205" fill="#111629" stroke="#303a67" />
-        <path d="M117 648c11-143 72-218 163-218s153 75 164 218" fill="url(#jacket)" />
-        <path d="M233 422l47 68 48-68 40 30-35 196H226l-35-196z" fill="#e7ecff" opacity=".92" />
-        <path d="M229 422c-24-20-41-61-44-110l-4-75c-5-87 46-139 101-139 71 0 108 55 102 139l-5 75c-3 49-23 89-50 110-31 24-69 24-100 0z" fill="#c58f73" />
-        <path d="M186 248c-19-100 26-167 102-167 77 0 118 65 94 172-13-13-19-36-17-67-38 12-96-5-126-31-1 42-18 73-53 93z" fill="#141827" />
-        <path d="M220 291c13 8 29 8 42 0M305 291c13 8 29 8 42 0" fill="none" stroke="#33221d" strokeWidth="6" strokeLinecap="round" />
-        <path d="M265 357c16 11 35 11 51 0" fill="none" stroke="#8d4d45" strokeWidth="6" strokeLinecap="round" />
-        <rect x="92" y="505" width="376" height="143" rx="16" fill="#0b0f1e" stroke="#4d5c99" strokeWidth="2" />
-        <circle cx="280" cy="572" r="18" fill="none" stroke="url(#screen)" strokeWidth="6" />
-        <path d="M280 554v36M262 572h36" stroke="url(#screen)" strokeWidth="4" />
-        <path d="M75 648h410" stroke="#59679e" strokeWidth="4" />
-      </svg>
-      <span className="portrait-label"><Sparkles size={14} /> Placeholder portrait</span>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={`${basePath}/images/piyush-more-profile.jpg`}
+        alt="Piyush More"
+        width="1254"
+        height="1254"
+      />
+      <span className="portrait-label"><Sparkles size={14} /> Software · Automation · AI</span>
     </div>
   );
 }
@@ -156,16 +140,20 @@ function Portrait() {
 function ArchitectureVisual({ type }: { type: Experience["visual"] }) {
   if (type === "analytics") {
     return (
-      <div className="chart-visual" aria-label="CGM trend illustration">
-        <div className="chart-grid" />
-        <svg viewBox="0 0 600 230" preserveAspectRatio="none">
-          <path d="M0 170C60 160 69 183 117 161s69-65 112-71 66 57 105 46 44-82 91-82 59 107 103 101 47-51 72-60" fill="none" stroke="#7c8cff" strokeWidth="6" />
-          <path d="M0 170C60 160 69 183 117 161s69-65 112-71 66 57 105 46 44-82 91-82 59 107 103 101 47-51 72-60V230H0z" fill="url(#chartFill)" opacity=".25" />
-          <defs><linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1"><stop stopColor="#7c8cff" /><stop offset="1" stopColor="#7c8cff" stopOpacity="0" /></linearGradient></defs>
-          <circle cx="425" cy="54" r="8" fill="#6ee7d2" />
-          <path d="M425 54v112" stroke="#6ee7d2" strokeDasharray="6 7" opacity=".7" />
-        </svg>
-        <div className="chart-note"><b>52 min</b><span>early signal</span></div>
+      <div className="project-evidence" aria-label="CGM spike detection result">
+        <div className="evidence-bar"><span><i /> Experiment output</span><b>CGM spike detection</b></div>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={`${basePath}/images/cgm-spike-detection.png`} alt="CGM glucose chart showing detected meal and spike markers" />
+      </div>
+    );
+  }
+
+  if (type === "imaging") {
+    return (
+      <div className="project-evidence evidence-dark" aria-label="Kidney stone detection interface">
+        <div className="evidence-bar"><span><i /> System output</span><b>Real-time detection study</b></div>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={`${basePath}/images/kidney-stone-detection.jpg`} alt="Endoscopic kidney stone detection interface with highlighted target" />
       </div>
     );
   }
@@ -173,9 +161,7 @@ function ArchitectureVisual({ type }: { type: Experience["visual"] }) {
   const nodes =
     type === "automation"
       ? ["Test data", "UI driver", "Validation", "Evidence"]
-      : type === "workflow"
-        ? ["Trigger", "Orchestrate", "Verify", "Notify"]
-        : ["Input frame", "Detection", "Segment", "Evaluate"];
+      : ["Trigger", "Orchestrate", "Verify", "Notify"];
 
   return (
     <div className={cx("architecture", `architecture-${type}`)}>

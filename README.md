@@ -37,7 +37,8 @@ The first remote build uses `npm install` because this environment cannot genera
 - Main experience: `components/Portfolio.tsx`
 - Color and layout system: `app/globals.css`
 - Temporary resume: `resume_trial2.pdf`
+- Profile and project images: `public/images/`
 - Replaceable SVG artwork: `public/placeholders/`
 - Social preview: `public/og-image.svg`
 
-The current portrait and resume are intentionally replaceable. Replace `resume_trial2.pdf` with the final resume using the same filename when it is ready.
+The profile photo and project evidence images are loaded from `public/images/`. Replace `resume_trial2.pdf` with the final resume using the same filename when it is ready.
