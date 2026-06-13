@@ -33,8 +33,9 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 100px; }
-body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font-inter), sans-serif; transition: background .25s, color .25s; }
+html { max-width: 100%; overflow-x: hidden; overflow-x: clip; scroll-behavior: smooth; scroll-padding-top: 100px; }
+body { width: 100%; max-width: 100%; margin: 0; overflow-x: hidden; overflow-x: clip; background: var(--bg); color: var(--text); font-family: var(--font-inter), sans-serif; transition: background .25s, color .25s; }
+main { width: 100%; max-width: 100%; overflow-x: hidden; overflow-x: clip; }
 body, button, a, input { -webkit-font-smoothing: antialiased; }
 button, a { color: inherit; }
 button { font: inherit; }
@@ -214,7 +215,7 @@ kbd { padding: 3px 5px; border: 1px solid var(--line); border-radius: 5px; backg
 .registration { position: absolute; right: 28px; bottom: 24px; color: var(--faint); font: 700 22px var(--font-manrope); }
 
 .skills-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 70px; align-items: center; }
-.skill-orbit { position: relative; min-height: 470px; display: grid; place-items: center; }
+.skill-orbit { position: relative; min-width: 0; min-height: 470px; display: grid; place-items: center; overflow: hidden; }
 .orbit { position: absolute; border: 1px solid var(--line); border-radius: 50%; }
 .orbit-one { width: 310px; height: 310px; animation: spin 18s linear infinite; }
 .orbit-two { width: 440px; height: 440px; border-style: dashed; animation: spin 30s linear reverse infinite; }
@@ -291,7 +292,9 @@ footer h2 { font-size: clamp(37px, 5vw, 60px); }
 
 @media (max-width: 740px) {
   .container { width: min(100% - 30px, 620px); }
-  .site-header { top: 10px; height: 54px; }
+  .site-header { top: 10px; width: calc(100% - 20px); height: 54px; gap: 10px; padding: 0 8px 0 11px; }
+  .brand, .nav-actions { min-width: 0; }
+  .nav-actions { flex-shrink: 0; gap: 5px; }
   .command-button span, .command-button kbd, .brand b { display: none; }
   .command-button { width: 36px; justify-content: center; padding: 0; }
   .hero { padding: 105px 0 70px; }
@@ -328,13 +331,29 @@ footer h2 { font-size: clamp(37px, 5vw, 60px); }
   .research-grid, .achievement-grid, .cert-grid { grid-template-columns: 1fr; }
   .achievement-card { min-height: 390px; padding: 27px; }
   .achievement-icon { margin-bottom: 50px; }
-  .skill-orbit { min-height: 380px; transform: scale(.82); margin: -30px 0; }
+  .skill-orbit { width: 100%; min-height: 350px; margin: -15px 0; transform: none; }
+  .orbit-one { width: 230px; height: 230px; }
+  .orbit-two { width: 330px; height: 330px; }
+  .orbit-core { width: 130px; height: 130px; }
+  .label-one { top: 13%; left: 13%; }
+  .label-two { right: 4%; top: 42%; }
+  .label-three { bottom: 12%; left: 24%; }
+  .label-four { left: 2%; top: 58%; }
   .milestone { grid-template-columns: 67px 20px 1fr; gap: 13px; }
   .resume-card { grid-template-columns: 1fr; padding: 28px; }
   .resume-icon { display: none; }
   .resume-card .button { width: 100%; }
   .footer-grid { grid-template-columns: 1fr; }
   .footer-bottom { align-items: flex-start; gap: 13px; flex-direction: column; }
+}
+
+@media (max-width: 390px) {
+  .command-button { display: none; }
+  .hero-visual { width: calc(100% - 20px); }
+  .chip-one { left: -10px; }
+  .chip-two { right: -10px; }
+  .orbit-two { width: 290px; height: 290px; }
+  .orbit-one { width: 210px; height: 210px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
