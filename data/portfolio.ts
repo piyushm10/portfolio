@@ -228,7 +228,7 @@ export const milestones = [
   {
     year: "Jan 2026",
     label: "Internship",
-    title: "Bio-Rad Medisys",
+    title: "Biorad Medisys",
     text: "Joined as System Design and Development Intern."
   },
   {

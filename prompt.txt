@@ -101,7 +101,7 @@ Create an interactive timeline.
 
 Highlight:
 
-Bio-Rad Medisys
+Biorad Medisys
 System Design and Development Intern
 
 Detailed sections:

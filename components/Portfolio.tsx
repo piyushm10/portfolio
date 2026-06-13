@@ -354,7 +354,7 @@ export default function Portfolio() {
           <div className="about-grid">
             <Reveal className="about-story">
               <p className="lead">I work where <strong>software engineering</strong>, <strong>automation</strong>, and <strong>applied AI</strong> meet real operational problems.</p>
-              <p>Currently, I&apos;m a System Design and Development Intern at Bio-Rad Medisys, contributing to healthcare software validation, automation frameworks, analytics research, and product feasibility studies.</p>
+              <p>Currently, I&apos;m a System Design and Development Intern at Biorad Medisys, contributing to healthcare software validation, automation frameworks, analytics research, and product feasibility studies.</p>
               <p>My focus is software-led: reliable systems, useful automation, interpretable analytics, and research that can survive contact with product constraints.</p>
               <div className="education-card">
                 <GraduationCap size={23} />
@@ -370,11 +370,11 @@ export default function Portfolio() {
 
       <section id="experience" className="section section-tinted">
         <div className="container">
-          <SectionHeading eyebrow="Experience" title="Engineering inside healthcare." copy="Bio-Rad Medisys · System Design and Development Intern · January 2026 - Present" />
+          <SectionHeading eyebrow="Experience" title="Engineering inside healthcare." copy="Biorad Medisys · System Design and Development Intern · January 2026 - Present" />
           <div className="experience-layout">
             <Reveal className="experience-aside">
               <span className="company-mark">BR</span>
-              <h3>Bio-Rad Medisys</h3>
+              <h3>Biorad Medisys</h3>
               <p>Healthcare Technology & Medical Devices</p>
               <div className="timeline-line"><i /></div>
             </Reveal>
