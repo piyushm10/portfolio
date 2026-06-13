@@ -34,8 +34,8 @@ The configuration automatically detects whether the repository is a user site (`
 - Portfolio facts: `data/portfolio.ts`
 - Main experience: `components/Portfolio.tsx`
 - Color and layout system: `app/globals.css`
-- Temporary resume placeholder: `public/resume_trails2.txt`
+- Temporary resume: `resume_trial2.pdf`
 - Replaceable SVG artwork: `public/placeholders/`
 - Social preview: `public/og-image.svg`
 
-The current portrait and resume download are intentionally placeholders. Replace `public/resume_trails2.txt` with the final resume and update the two matching links in `components/Portfolio.tsx` when it is ready.
+The current portrait and resume are intentionally replaceable. Replace `resume_trial2.pdf` with the final resume using the same filename when it is ready.

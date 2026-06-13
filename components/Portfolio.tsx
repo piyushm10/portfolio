@@ -339,7 +339,7 @@ export default function Portfolio() {
             <p className="hero-statement">{profile.statement}</p>
             <div className="hero-actions">
               <a className="button button-primary" href="#projects">View projects <ArrowDown size={17} /></a>
-              <a className="button button-secondary" href={`${basePath}/resume_trails2.txt`} download>Resume <Download size={17} /></a>
+              <a className="button button-secondary" href={`${basePath}/resume_trial2.pdf`} download>Resume <Download size={17} /></a>
             </div>
             <div className="social-row">
               <a href={profile.linkedin} target="_blank" rel="noreferrer"><Linkedin size={17} />LinkedIn</a>
@@ -489,7 +489,7 @@ export default function Portfolio() {
           <Reveal className="resume-card">
             <div className="resume-icon"><FileText /></div>
             <div><span className="eyebrow"><span />Resume</span><h2>The complete professional profile.</h2><p>Education, experience, research, publications, intellectual property, certifications, and technical skills in one document.</p></div>
-            <a className="button button-primary" href={`${basePath}/resume_trails2.txt`} download>Download placeholder <Download size={17} /></a>
+            <a className="button button-primary" href={`${basePath}/resume_trial2.pdf`} download>Download resume <Download size={17} /></a>
           </Reveal>
         </div>
       </section>
