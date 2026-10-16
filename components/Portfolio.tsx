@@ -11,12 +11,13 @@ import {
   Bug,
   Check,
   ChevronDown,
-  Clock,
   Code2,
   Command,
   Download,
   ExternalLink,
+  FileCode,
   FileText,
+  FlaskConical,
   Github,
   GraduationCap,
   LayoutDashboard,
@@ -56,7 +57,7 @@ import {
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
-const statIcons = [Bug, LayoutDashboard, Activity, Clock];
+const statIcons = [FlaskConical, Bug, FileCode, LayoutDashboard, Activity];
 const skillIcons = [Code2, Braces, Bug, Sparkles, Wrench];
 const milestoneIcons: Record<string, typeof Award> = {
   Education: GraduationCap,

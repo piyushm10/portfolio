@@ -99,7 +99,7 @@ kbd { padding: 3px 5px; border: 1px solid var(--line); border-radius: 5px; backg
 .scroll-cue { position: absolute; z-index: 3; bottom: 26px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 9px; color: var(--faint); font-size: 10px; text-transform: uppercase; letter-spacing: .15em; }
 
 .stats-strip { border-block: 1px solid var(--line); background: var(--bg-tint); }
-.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(178px, 1fr)); }
 .stat { position: relative; padding: 31px 30px; border-right: 1px solid var(--line); }
 .stat:first-child { border-left: 1px solid var(--line); }
 .stat-icon { display: grid; place-items: center; width: 30px; height: 30px; margin-bottom: 13px; border: 1px solid var(--line); border-radius: 9px; color: var(--accent); background: var(--card); }

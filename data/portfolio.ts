@@ -15,10 +15,11 @@ export const profile = {
 };
 
 export const stats = [
-  { value: 593, suffix: "+", label: "Documented test cases" },
+  { value: 22000, suffix: "+", label: "Test cases generated" },
+  { value: 593, suffix: "", label: "Scripted onboarding TCs" },
+  { value: 25, suffix: "", label: "Test scripts" },
   { value: 15, suffix: "+", label: "Application screens" },
-  { value: 113, suffix: "", label: "Spikes detected" },
-  { value: 52, suffix: " min", label: "Average lead time" }
+  { value: 113, suffix: "", label: "Spikes detected" }
 ];
 
 export const focusAreas = [
@@ -53,16 +54,16 @@ export const experiences: Experience[] = [
     number: "01",
     title: "Healthcare UI Automation Framework",
     summary:
-      "Designed and implemented a Python framework that documents and validates Linux-based medical applications across 15+ screens.",
+      "A Python framework validating Linux-based medical UIs across 15+ screens, scaling from 593 scripted cases to 22,000+ preset-matrix cases.",
     problem:
       "Medical UI validation requires repeatable coverage, clear evidence, and reliable checks across navigation, focus behavior, input rules, errors, and screen transitions.",
     approach:
       "Built an Excel-driven black-box framework around Linux accessibility APIs, automated interaction, screenshot evidence, UI-tree comparison, and AI-assisted visual validation.",
     outcomes: [
-      "~593+ documented test cases across 25 test scripts",
-      "15+ application screens automated",
-      "11 tool categories integrated",
-      "PASS/FAIL reports with screenshot evidence"
+      "593 scripted test cases across onboarding screens 01–06",
+      "22,000+ preset-matrix cases for procedure, DFS, and scope flows",
+      "25 test scripts covering 15+ application screens",
+      "11 tool categories + PASS/FAIL evidence reports"
     ],
     technologies: [
       "Python",
@@ -79,7 +80,7 @@ export const experiences: Experience[] = [
     visual: "automation",
     testRun: {
       title: "pytest · ui_test_automation",
-      meta: ["593+ test cases", "25 scripts", "15+ screens", "11 tools"],
+      meta: ["22,000+ generated", "593 onboarding", "25 scripts", "15+ screens", "11 tools"],
       screens: [
         { name: "Welcome", script: "01", cases: "~43" },
         { name: "Hospital Details", script: "02", cases: "~70" },
@@ -87,13 +88,16 @@ export const experiences: Experience[] = [
         { name: "Surgeon Details", script: "04", cases: "~161" },
         { name: "Confirm Password", script: "05", cases: "~99" },
         { name: "Login (3 tabs)", script: "06", cases: "~127" },
-        { name: "Procedure", script: "07", cases: "multi" },
+        { name: "Procedure · Enli8NXT", script: "13C", cases: "8,550" },
+        { name: "Procedure · Enli8", script: "13A", cases: "2,125" },
+        { name: "DFS (7 presets)", script: "12", cases: "49" },
+        { name: "Scope Usage", script: "14", cases: "392" },
+        { name: "Scope Connection Error", script: "15", cases: "7" },
+        { name: "Forgot Password (3 tabs)", script: "16", cases: "51" },
+        { name: "Feature Visibility", script: "11", cases: "~11" },
         { name: "Archive", script: "08", cases: "~103" },
-        { name: "Settings", script: "09", cases: "~18" },
         { name: "Profile", script: "10", cases: "~49" },
-        { name: "Feature Visibility", script: "11", cases: "6" },
-        { name: "DFS / Preset / Scope", script: "12", cases: "dynamic" },
-        { name: "Forgot Password", script: "16", cases: "multi" },
+        { name: "Settings", script: "09", cases: "~18" },
         { name: "App Update (USB)", script: "19", cases: "~15" }
       ]
     }
