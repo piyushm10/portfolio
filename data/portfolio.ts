@@ -15,8 +15,8 @@ export const profile = {
 };
 
 export const stats = [
-  { value: 250, suffix: "+", label: "Automated test cases" },
-  { value: 6, suffix: "", label: "Application screens" },
+  { value: 593, suffix: "+", label: "Documented test cases" },
+  { value: 15, suffix: "+", label: "Application screens" },
   { value: 113, suffix: "", label: "Spikes detected" },
   { value: 52, suffix: " min", label: "Average lead time" }
 ];
@@ -40,6 +40,11 @@ export type Experience = {
   outcomes: string[];
   technologies: string[];
   visual: "automation" | "analytics" | "imaging" | "workflow";
+  testRun?: {
+    title: string;
+    meta: string[];
+    screens: { name: string; script: string; cases: string }[];
+  };
 };
 
 export const experiences: Experience[] = [
@@ -48,28 +53,50 @@ export const experiences: Experience[] = [
     number: "01",
     title: "Healthcare UI Automation Framework",
     summary:
-      "Designed and implemented a Python framework for validating Linux-based medical applications.",
+      "Designed and implemented a Python framework that documents and validates Linux-based medical applications across 15+ screens.",
     problem:
       "Medical UI validation requires repeatable coverage, clear evidence, and reliable checks across navigation, focus behavior, input rules, errors, and screen transitions.",
     approach:
       "Built an Excel-driven black-box framework around Linux accessibility APIs, automated interaction, screenshot evidence, UI-tree comparison, and AI-assisted visual validation.",
     outcomes: [
-      "Approximately 250 automated test cases",
-      "Six application screens automated",
-      "Automated PASS/FAIL reports with evidence",
-      "Additional modules under active development"
+      "~593+ documented test cases across 25 test scripts",
+      "15+ application screens automated",
+      "11 tool categories integrated",
+      "PASS/FAIL reports with screenshot evidence"
     ],
     technologies: [
       "Python",
-      "Linux",
-      "Dogtail",
       "AT-SPI",
-      "OpenPyXL",
+      "pyatspi",
+      "OpenAI GPT-4.1",
       "OpenCV",
+      "OpenPyXL",
+      "Xvfb",
+      "MySQL",
       "xdotool",
-      "OpenAI APIs"
+      "Pillow"
     ],
-    visual: "automation"
+    visual: "automation",
+    testRun: {
+      title: "pytest · ui_test_automation",
+      meta: ["593+ test cases", "25 scripts", "15+ screens", "11 tools"],
+      screens: [
+        { name: "Welcome", script: "01", cases: "~43" },
+        { name: "Hospital Details", script: "02", cases: "~70" },
+        { name: "Security Setup", script: "03", cases: "~93" },
+        { name: "Surgeon Details", script: "04", cases: "~161" },
+        { name: "Confirm Password", script: "05", cases: "~99" },
+        { name: "Login (3 tabs)", script: "06", cases: "~127" },
+        { name: "Procedure", script: "07", cases: "multi" },
+        { name: "Archive", script: "08", cases: "~103" },
+        { name: "Settings", script: "09", cases: "~18" },
+        { name: "Profile", script: "10", cases: "~49" },
+        { name: "Feature Visibility", script: "11", cases: "6" },
+        { name: "DFS / Preset / Scope", script: "12", cases: "dynamic" },
+        { name: "Forgot Password", script: "16", cases: "multi" },
+        { name: "App Update (USB)", script: "19", cases: "~15" }
+      ]
+    }
   },
   {
     id: "cgm-analytics",

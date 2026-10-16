@@ -1,13 +1,17 @@
 "use client";
 
 import {
+  Activity,
   ArrowDown,
   ArrowUpRight,
   Award,
   BookOpen,
+  Braces,
   BriefcaseBusiness,
+  Bug,
   Check,
   ChevronDown,
+  Clock,
   Code2,
   Command,
   Download,
@@ -15,13 +19,16 @@ import {
   FileText,
   Github,
   GraduationCap,
+  LayoutDashboard,
   Linkedin,
   Mail,
   Menu,
   Moon,
+  Rocket,
   Search,
   Sparkles,
   Sun,
+  Wrench,
   X
 } from "lucide-react";
 import {
@@ -48,6 +55,17 @@ import {
 } from "@/data/portfolio";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+const statIcons = [Bug, LayoutDashboard, Activity, Clock];
+const skillIcons = [Code2, Braces, Bug, Sparkles, Wrench];
+const milestoneIcons: Record<string, typeof Award> = {
+  Education: GraduationCap,
+  Publication: BookOpen,
+  "Intellectual Property": Award,
+  Internship: BriefcaseBusiness,
+  Research: Rocket,
+  Graduation: GraduationCap
+};
 
 function cx(...classes: Array<string | false | null | undefined>) {
   return classes.filter(Boolean).join(" ");
@@ -86,6 +104,14 @@ function SectionHeading({
 }) {
   return (
     <Reveal className="section-heading">
+      <span className="heading-accent" aria-hidden="true">
+        <svg viewBox="0 0 46 46" fill="none">
+          <path d="M2 16V2h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+          <path d="M44 30v14H30" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+          <circle cx="38" cy="8" r="2.4" fill="currentColor" />
+          <circle cx="8" cy="38" r="2.4" fill="currentColor" />
+        </svg>
+      </span>
       <span className="eyebrow"><span />{eyebrow}</span>
       <h2>{title}</h2>
       {copy && <p>{copy}</p>}
@@ -137,6 +163,43 @@ function Portrait() {
   );
 }
 
+function TestRunVisual({ data }: { data: NonNullable<Experience["testRun"]> }) {
+  const visible = data.screens.slice(0, 7);
+  return (
+    <div className="testrun" aria-label="Automated test run summary">
+      <div className="testrun-bar">
+        <span className="testrun-dots" aria-hidden="true"><i /><i /><i /></span>
+        <b>{data.title}</b>
+        <span className="testrun-status"><i /> passing</span>
+      </div>
+      <div className="testrun-body">
+        {visible.map((screen, index) => (
+          <div className="testrun-row" key={screen.name} style={{ animationDelay: `${index * 90}ms` }}>
+            <span className="testrun-script">{screen.script}</span>
+            <span className="testrun-name">{screen.name}</span>
+            <span className="testrun-cases">{screen.cases} TCs</span>
+            <span className="testrun-pass"><Check size={11} /> PASS</span>
+          </div>
+        ))}
+        {data.screens.length > visible.length && (
+          <div className="testrun-row testrun-row-more" style={{ animationDelay: `${visible.length * 90}ms` }}>
+            <span className="testrun-script">··</span>
+            <span className="testrun-name">+{data.screens.length - visible.length} more screens</span>
+            <span className="testrun-pass"><Check size={11} /> PASS</span>
+          </div>
+        )}
+      </div>
+      <div className="testrun-foot">
+        <div className="testrun-meter" aria-hidden="true"><span /></div>
+        <div className="testrun-meta">
+          {data.meta.map((item) => <span key={item}>{item}</span>)}
+          <i className="testrun-cursor" aria-hidden="true" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function ArchitectureVisual({ type }: { type: Experience["visual"] }) {
   if (type === "analytics") {
     return (
@@ -158,10 +221,11 @@ function ArchitectureVisual({ type }: { type: Experience["visual"] }) {
     );
   }
 
-  const nodes =
-    type === "automation"
-      ? ["Test data", "UI driver", "Validation", "Evidence"]
-      : ["Trigger", "Orchestrate", "Verify", "Notify"];
+  if (type === "automation") {
+    return null;
+  }
+
+  const nodes = ["Trigger", "Orchestrate", "Verify", "Notify"];
 
   return (
     <div className={cx("architecture", `architecture-${type}`)}>
@@ -202,6 +266,7 @@ function ProjectCard({ item, index }: { item: Experience; index: number }) {
             exit={{ opacity: 0, height: 0 }}
           >
             <ArchitectureVisual type={item.visual} />
+            {item.testRun && <TestRunVisual data={item.testRun} />}
             <div className="project-columns">
               <div><small>Problem</small><p>{item.problem}</p></div>
               <div><small>Approach</small><p>{item.approach}</p></div>
@@ -344,7 +409,16 @@ export default function Portfolio() {
 
       <section className="stats-strip">
         <div className="container stats-grid">
-          {stats.map((stat) => <div className="stat" key={stat.label}><Counter value={stat.value} suffix={stat.suffix} /><small>{stat.label}</small></div>)}
+          {stats.map((stat, index) => {
+            const Icon = statIcons[index % statIcons.length];
+            return (
+              <div className="stat" key={stat.label}>
+                <span className="stat-icon" aria-hidden="true"><Icon size={15} /></span>
+                <span className="stat-value"><Counter value={stat.value} suffix={stat.suffix} /></span>
+                <small>{stat.label}</small>
+              </div>
+            );
+          })}
         </div>
       </section>
 
@@ -446,7 +520,15 @@ export default function Portfolio() {
               <span className="orbit-label label-one">Automation</span><span className="orbit-label label-two">Applied AI</span><span className="orbit-label label-three">Analytics</span><span className="orbit-label label-four">Testing</span>
             </Reveal>
             <div className="skill-groups">
-              {Object.entries(skills).map(([category, items], index) => <Reveal className="skill-group" key={category} delay={index * .05}><h3>{category}</h3><div className="skill-pills">{items.map((item) => <span key={item}>{item}</span>)}</div></Reveal>)}
+              {Object.entries(skills).map(([category, items], index) => {
+                const Icon = skillIcons[index % skillIcons.length];
+                return (
+                  <Reveal className="skill-group" key={category} delay={index * .05}>
+                    <h3><span className={`skill-dot skill-dot-${index + 1}`} aria-hidden="true"><Icon size={13} /></span>{category}</h3>
+                    <div className="skill-pills">{items.map((item) => <span key={item}>{item}</span>)}</div>
+                  </Reveal>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -465,7 +547,20 @@ export default function Portfolio() {
         <div className="container">
           <SectionHeading eyebrow="Timeline" title="The path so far." />
           <div className="journey">
-            {milestones.map((milestone, index) => <Reveal className="milestone" key={`${milestone.year}-${milestone.title}`} delay={index * .05}><div className="milestone-date">{milestone.year}</div><div className="milestone-dot"><span /></div><div className="milestone-content"><small>{milestone.label}</small><h3>{milestone.title}</h3><p>{milestone.text}</p></div></Reveal>)}
+            {milestones.map((milestone, index) => {
+              const Icon = milestoneIcons[milestone.label] ?? Sparkles;
+              return (
+                <Reveal className="milestone" key={`${milestone.year}-${milestone.title}`} delay={index * .05}>
+                  <div className="milestone-date">{milestone.year}</div>
+                  <div className="milestone-dot"><span /></div>
+                  <div className="milestone-content">
+                    <small><Icon size={11} /> {milestone.label}</small>
+                    <h3>{milestone.title}</h3>
+                    <p>{milestone.text}</p>
+                  </div>
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>
